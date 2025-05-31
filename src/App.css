@@ -1,0 +1,315 @@
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.sound-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sound-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the volume icon and slider */
+}
+
+.volume-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sound-label {
+  font-size: 1.1rem;
+  font-family: "georgia", monospace;
+  font-weight: 500;
+  color: #0a0a0a;
+  margin-right: 0.5rem;
+}
+
+.sound-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sound-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Style the slider track (black line) */
+.sound-slider-range {
+  -webkit-appearance: none; /* Remove default styling */
+  width: 100%;
+  height: 2px; /* Thickness of the line */
+  background: black; /* Black line */
+  border-radius: 2px; /* Rounded edges */
+  outline: none; /* Remove focus outline */
+  cursor: pointer;
+}
+
+/* Style the slider thumb (dot) */
+.sound-slider-range::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling */
+  width: 12px; /* Size of the dot */
+  height: 12px;
+  background: black; /* Black dot */
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.sound-slider-range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sound-slider-range::-ms-thumb {
+  width: 12px;
+  height: 12px;
+  background: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.sound-container {
+  position: fixed;
+  top: 20%; /* pushes it down */
+  right: 6%; /* a bit away from the edge */
+  width: 300px; /* gives it breathing room */
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.app.sunrise {
+  background-image: 
+    linear-gradient(
+      to bottom,
+      #fc7174 0%,
+      #eb6859 20%,
+      #fc8862 40%,
+      #fda26b 60%,
+      #fdbb63 100%
+    );
+  background-size: cover;
+  background-position: center;
+}
+
+.app.day {
+  background-image: 
+    linear-gradient(
+      to bottom,
+      #cdd6e0 0%,
+      #4f93d2 20%,
+      #c9c7c4 40%,
+      #3989a2 60%,
+      #1a467f 100%
+    );
+  background-size: cover;
+  background-position: center;
+}
+
+.app.sunset {
+  background-image: 
+    linear-gradient(
+      to bottom,
+      #001f3f 0%,
+      #005577 20%,
+      #208080 40%,
+      #f9a66b 60%,
+      #1a1a2e 100%
+    );
+  background-size: cover;
+  background-position: center;
+}
+
+.app.night {
+  background-image: 
+    linear-gradient(
+      to bottom,
+      #012840 0%,
+      #021826 20%,
+      #011c26 40%,
+      #025959 60%,
+      #0f8c8c 100%
+    );
+  background-size: cover;
+  background-position: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.8rem; 
+  color: #cdd6e0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-family: 'georgia', monospace; 
+  z-index: 10;
+}
+
+.footer a {
+  color: #cdd6e0; 
+  text-decoration: none; 
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+
+.app.sunrise .title-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 1.5rem;
+  font-family: 'Georgia', monospace;
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    #dec0ae 0%,
+    #d4949d 25%,
+    #5c63a4 50%,
+    #acb0cc 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.app.day .title-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 1.5rem;
+  font-family: 'Georgia', monospace;
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    #5f6f92 0%,
+    #37406e 25%,
+    #1a1a4a 50%, 
+    #0c0726 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.app.sunset .title-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 1.5rem;
+  font-family: 'Georgia', monospace;
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    #f5e6e1 0%,
+    #ffffff 25%,
+    #83c7f8 50%,
+    #008ad4 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+.app.night .title-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 1.5rem;
+  font-family: 'Georgia', monospace;
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    #f5e6e1 0%,
+    #ffffff 25%,
+    #83c7f8 50%,
+    #008ad4 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.app.night .sound-label {
+  font-size: 1.1rem;
+  font-family: "georgia", monospace;
+  font-weight: 500;
+  color: #ffffff;
+  margin-right: 0.5rem;
+}
+
+.app.night .sound-slider-range {
+  -webkit-appearance: none; /* Remove default styling */
+  width: 100%;
+  height: 2px; /* Thickness of the line */
+  background: rgb(255, 255, 255); /* Black line */
+  border-radius: 2px; /* Rounded edges */
+  outline: none; /* Remove focus outline */
+  cursor: pointer;
+}
+
+/* Style the slider thumb (dot) */
+.app.night .sound-slider-range::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default styling */
+  width: 12px; /* Size of the dot */
+  height: 12px;
+  background: rgb(255, 255, 255); /* Black dot */
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.app.night .sound-slider-range::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.app.night .sound-slider-range::-ms-thumb {
+  width: 12px;
+  height: 12px;
+  background: rgb(255, 253, 253);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.beach-doodle {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  width: 1250px; /* or whatever size you want */
+  height: auto;
+  image-rendering: pixelated; /* 👈 keeps the crisp edges */
+  z-index: 2; /* make sure it's above your gradient */
+}
