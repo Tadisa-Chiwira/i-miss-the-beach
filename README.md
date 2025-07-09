@@ -4,4 +4,4 @@ A website inspired by "I miss my library" and "I miss my cafe" for when you miss
 
 
 ## Try It
-
+https://i-miss-the-beach.web.app/
